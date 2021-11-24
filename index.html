@@ -1,0 +1,45 @@
+<!doctype html>
+<link rel="stylesheet" href="./style.css">
+<head>
+    <title>Генератор Соц-Сетей</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Генератор и смена цвета Соц-Сети</h1>
+    <h2>Выберите Соц-Сети</h2>
+    <ol id="sortable">
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><label><input id="Facebook" type="checkbox" class="socialmedia-checkbox"></input> Facebook</label></li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><label><input id="Twitter" type="checkbox" class="socialmedia-checkbox"></input> Twitter</label></li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><label><input id="LinkedIn" type="checkbox" class="socialmedia-checkbox"></input> LinkedIn</label></li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><label><input id="Pinterest" type="checkbox" class="socialmedia-checkbox"></input> Pinterest</label></li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><label><input id="CopyLink" type="checkbox" class="socialmedia-checkbox"></input> Copy Link</label></li>
+    </ol>
+
+    <div style="display: flex; flex-direction: row;">
+        <div style="min-width: 25%;">
+            <h2>Настройка :</h2>
+            <p>Цвет: <input type="color" id="background-color-input" value="#000000"></input></p>
+            <p>Убрать Картинки: <input type="checkbox" id="no-background-input"></input></p>
+            <p>Внутренний Цвет<input type="color" id="icon-color-input" value="#ffffff"></input></p>
+            <p>Масштаб картинки : <input type="number" id="scale-input" value="1"></input></p>
+            <p>Радиус границы (%) : <input type="number" id="border-radius-input" value="50"></input></p>
+            <p>Заполнение внутри (px) : <input type="number" id="padding-within-input" value="10"></input></p>
+            <p>Расстояние между (px) : <input type="number" id="space-between-input" value="2"></input></p>
+            <p>Полупрозрачный при наведении : <input type="checkbox" id="hover-input"></input></p>
+        </div>
+        <div style="min-width: 25%;">
+            <h2>Предпросмотр :</h2>
+            <div id="preview"></div>
+            
+            <h2>Эмбед:</h2>
+            <div id="embed" onclick="copyEmbed()"></div>
+            <script>function copyEmbed() {document.execCommand('copy'); alert('Встроенный виджет, скопированный в буфер обмена!')}</script>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="tool.js"></script>
+</footer>
